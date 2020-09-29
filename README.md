@@ -1,6 +1,7 @@
 # Gocfg
 
-Gocfg is an interpolate library for a configuration. It reads from files (yml, toml, json, conf, ...) and sets the corresponding parameter values on a struct. The cool part of this library is that this reading process is interpolated, in other words this means that you could use variables to search for
+Gocfg is an interpolate library for a configuration. It reads from files (yml, toml, json, conf, ...) and sets the corresponding parameter values on a struct. 
+The cool part of this library is that this reading process is interpolated, in other words this means that you could use variables to search for
 environment variables and define default values if they don’t exist, all in the file. eg:
 
 ```Golang

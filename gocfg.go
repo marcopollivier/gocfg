@@ -17,6 +17,7 @@ const (
 //Load start's the gocfg process, setting the structure used as a reference and the type of the configuration:
 //- Environment variables is gocfg.ENV
 //- Yaml file is gocfg.YAML
+//- JSON file is gocfg.JSON
 //if no file name is informed the function will search on the current path for a application.yml
 func Load(s interface{}, loadType reader.Type, files ...string) (err error) {
 	var (
@@ -45,9 +46,9 @@ func selector(loadType reader.Type) (selected reader.Reader, extension string) {
 	case YAML:
 		selected = reader.Yaml{}
 		extension = "yml"
-	//case JSON:
-	//	selected = Json{}
-	//	extension = "json"
+	case JSON:
+		selected = reader.Json{}
+		extension = "json"
 	//case TOML:
 	//	selected = Toml{}
 	//	extension = "toml"
