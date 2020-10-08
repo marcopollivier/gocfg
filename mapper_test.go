@@ -1,7 +1,6 @@
 package gocfg
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/caioeverest/gocfg/reader"
@@ -52,7 +51,6 @@ func TestFill(t *testing.T) {
 	var c = Example{}
 	err := fill(inputOkMapper, &c)
 	assert.Nil(t, err)
-	fmt.Printf("%+v", c)
 }
 
 func TestFill_ShouldErrorWhenRequiredFieldIsMissing(t *testing.T) {
